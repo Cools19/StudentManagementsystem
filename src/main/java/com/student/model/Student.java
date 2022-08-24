@@ -12,10 +12,9 @@ public class Student {
 @GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String firstName;
-	private String LastName;
-	private String studentclass;
+	private String lastName;
+	private String studentClass;
 	private String subject;
-	private String address;
 	private String dob;
 	public int getId() {
 		return id;
@@ -30,16 +29,16 @@ public class Student {
 		this.firstName = firstName;
 	}
 	public String getLastName() {
-		return LastName;
+		return lastName;
 	}
 	public void setLastName(String lastName) {
-		LastName = lastName;
+		this.lastName = lastName;
 	}
-	public String getStudentclass() {
-		return studentclass;
+	public String getStudentClass() {
+		return studentClass;
 	}
-	public void setStudentclass(String studentclass) {
-		this.studentclass = studentclass;
+	public void setStudentClass(String studentClass) {
+		this.studentClass = studentClass;
 	}
 	public String getSubject() {
 		return subject;
@@ -47,32 +46,30 @@ public class Student {
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
+
 	public String getDob() {
 		return dob;
 	}
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
-	public Student(int id, String firstName, String lastName, String studentclass, String subject, String address,
+	public Student(int id, String firstName, String lastName, String studentClass, String subject,
 			String dob) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
-		LastName = lastName;
-		this.studentclass = studentclass;
+		this.lastName = lastName;
+		this.studentClass = studentClass;
 		this.subject = subject;
-		this.address = address;
+	
 		this.dob = dob;
 	}
 	public Student() {
 		super();
 	}
-}
+	
+	
+	}
+
 
 	
