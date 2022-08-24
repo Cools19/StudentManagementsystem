@@ -49,19 +49,19 @@ public class StudentController {
 	 }
 		 
 		 
-	 @GetMapping("/getbook/{id}")
+	 @GetMapping("/getstudent/{id}")
 	 public Optional<Student> getEmployee(@PathVariable Integer id){
 		 Optional<Student> employee = studentService.getStudent(id);
 		 return employee; 
 	 }
 	 
-	 @DeleteMapping ("/deletebook/{id}")
-	 public ResponseEntity<Student> deleteBook(@PathVariable Integer id){
+	 @DeleteMapping ("/deletestudent/{id}")
+	 public ResponseEntity<Student> deleteStudent(@PathVariable Integer id){
 		 System.out.println(id);
 		 ResponseEntity<Student> responseEntity = new ResponseEntity<>(HttpStatus.OK);
 		 
 				 try {
-					 studentService.getStudent(id);
+					 studentService.deleteStudent(id);
 				 }
 		 		catch(Exception e) {
 		 			e.printStackTrace();
@@ -70,8 +70,8 @@ public class StudentController {
 		 return responseEntity;
 	 }
 	 
-	 @PutMapping("/updatebook/{id}")
-	 public ResponseEntity<Student> upadtebook(@PathVariable("id") Integer id, @RequestBody Student student){
+	 @PutMapping("/updatestudent/{id}")
+	 public ResponseEntity<Student> upadtestudent(@PathVariable("id") Integer id, @RequestBody Student student){
 		 return new ResponseEntity<Student>(studentService.updateStudent(student,id),HttpStatus.OK);
 		 
 	 }

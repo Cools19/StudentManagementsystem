@@ -31,8 +31,9 @@ public class StudentSevice implements IStudentService {
 	}
 
 	@Override
-	public void deleteStudent(Integer id) {
+	public String deleteStudent(Integer id) {
 		studentRepository.deleteById(id);
+		return "deleted";
 	}
 
 	@Override
@@ -40,11 +41,11 @@ public class StudentSevice implements IStudentService {
 		Student existingStudent = studentRepository.findById(id).orElse(student);
 
 		existingStudent.setFirstName(student.getFirstName());
-		existingStudent.setLastName(student.getFirstName());
-		existingStudent.setStudentClass(student.getFirstName());
-		existingStudent.setSubject(student.getFirstName());
-		existingStudent.setFirstName(student.getFirstName());
-		studentRepository.save(existingStudent);
+		existingStudent.setLastName(student.getLastName());
+		existingStudent.setStudentClass(student.getStudentClass());
+		existingStudent.setSubject(student.getSubject());
+		existingStudent.setDob(student.getDob());
+		studentRepository.save(student);
 		return existingStudent;
 
 	}

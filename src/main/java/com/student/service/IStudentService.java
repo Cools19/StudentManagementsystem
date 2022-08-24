@@ -10,7 +10,7 @@ public interface IStudentService {
 	Integer saveStudent(Student student);
 	public List<Student> getAllStudents();
 	Optional<Student> getStudent(Integer id);
-	public void deleteStudent(Integer id);
+	public String deleteStudent(Integer id);
 	public Student updateStudent(Student student, Integer id) ;
 	public void deleteAll();
 }
